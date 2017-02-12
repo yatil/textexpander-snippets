@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>groupInfo</key>
+	<dict>
+		<key>expandAfterMode</key>
+		<integer>0</integer>
+		<key>groupName</key>
+		<string>Last week’s weekday</string>
+		<key>notes</key>
+		<string>Created by Eric Eggert (@yatil, yatil.net)
+
+Adapted from http://www.asianefficiency.com/technology/save-time-with-expert-level-textexpander-snippets/</string>
+	</dict>
+	<key>snippetsTE2</key>
+	<array>
+		<dict>
+			<key>abbreviation</key>
+			<string>lsfri</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Friday last week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:48:15Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Friday) -- Friday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate + days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>B2343847-ED26-484F-8207-67E5F2212836</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>lsmon</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Monday next week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:48:25Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert
+# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Monday) -- Monday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate - days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>EBA5B503-D5ED-4F07-A930-547845CFBD57</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>lssat</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Saturday next week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:48:34Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert
+# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Saturday) -- Saturday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate - days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>E2B3D983-8BC8-413C-A1FC-044CC2F7CA13</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>lssun</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Sunday next week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:48:43Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert
+# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate - days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>EC01B6A1-0734-4730-921F-D768E703797C</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>lsthu</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Thursday next week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:48:51Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert
+# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Thursday) -- Thursday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate - days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>EE64BE77-178D-4A78-A0F3-AA370DDE41EE</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>lstue</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Monday next week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:48:59Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert
+# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Tuesday) -- Tuesday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate - days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>274A0DB2-8A05-4970-BE86-2AEC3BBAAF62</string>
+		</dict>
+		<dict>
+			<key>abbreviation</key>
+			<string>lswed</string>
+			<key>abbreviationMode</key>
+			<integer>0</integer>
+			<key>creationDate</key>
+			<date>2017-01-02T12:29:36Z</date>
+			<key>label</key>
+			<string>date of Wednesday next week</string>
+			<key>modificationDate</key>
+			<date>2017-02-12T21:49:11Z</date>
+			<key>plainText</key>
+			<string># AppleScript for TextExpander
+# Eric Eggert
+# 2017-02-12
+# http://yatil.net
+# 
+# based on:
+# Helmut Hauser
+# May 21, 2015
+# http://www.worksmartandberemarkable.com
+#
+# for Asian Efficiency
+# http://www.asianefficiency.com/
+
+
+# For different weekdays you simply have to change the this line
+# e.g, set dateOfLastWeekday to getDateOfLastWeekWeekday(Sunday) -- Sunday
+set dateOfLastWeekday to getDateOfLastWeekWeekday(Wednesday) -- Wednesday
+
+
+set myWeekDay to weekday of dateOfLastWeekday
+set myMonth to month of dateOfLastWeekday
+set myDay to day of dateOfLastWeekday
+set myYear to year of dateOfLastWeekday
+
+# Here we put the final output together
+# if you want a different format, you will have to change this line
+# simply combine variables, like myMonth or my Day, with other text pieces like ")" or "," 
+# You will have to put an ampersand  "&amp;" in between
+# If you need to make a newline use the keyword "return" (without quotation mark)
+set fullOutput to "" &amp; myWeekDay &amp; " last week" &amp; " (" &amp; myMonth &amp; " " &amp; myDay &amp; ", " &amp; myYear &amp; ")"
+
+return fullOutput
+
+
+
+
+# ----------------------------------------
+# subroutine is based on script by Doug Stephen
+# see http://canadian-fury.com/2012/08/31/performing-fixed-point-date-arithmetic-in-textexpander-using-applescript/
+# adapted by Helmut Hauser
+#----------------------------------------
+
+on getDateOfLastWeekWeekday(lastWeekdayToFind)
+	
+	#find last Sunday as a starting point to count (i.e., week starts with Monday)
+	set lastSundayDate to current date
+	
+	if lastSundayDate's weekday is Sunday then
+		lastSundayDate is ((current date) - (7 * days))
+	else
+		repeat until lastSundayDate's weekday is Sunday
+			set lastSundayDate to lastSundayDate - days
+		end repeat
+	end if
+	
+	# Using Sunday as starting point to find the date of the weekday
+	set returnDate to lastSundayDate
+	if returnDate's weekday is lastWeekdayToFind then return (lastSundayDate) - (7 * days)
+	repeat until returnDate's weekday is lastWeekdayToFind
+		set returnDate to returnDate - days
+	end repeat
+	
+	return returnDate
+	
+end getDateOfLastWeekWeekday
+
+</string>
+			<key>snippetType</key>
+			<integer>2</integer>
+			<key>uuidString</key>
+			<string>B0D803CD-6B17-4FB5-9A39-01BE9E926905</string>
+		</dict>
+	</array>
+</dict>
+</plist>
