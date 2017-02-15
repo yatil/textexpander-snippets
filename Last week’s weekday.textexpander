@@ -106,9 +106,9 @@ end getDateOfLastWeekWeekday
 			<key>creationDate</key>
 			<date>2017-01-02T12:29:36Z</date>
 			<key>label</key>
-			<string>date of Monday next week</string>
+			<string>date of Monday last week</string>
 			<key>modificationDate</key>
-			<date>2017-02-12T21:48:25Z</date>
+			<date>2017-02-12T22:10:43Z</date>
 			<key>plainText</key>
 			<string># AppleScript for TextExpander
 # Eric Eggert
@@ -190,9 +190,9 @@ end getDateOfLastWeekWeekday
 			<key>creationDate</key>
 			<date>2017-01-02T12:29:36Z</date>
 			<key>label</key>
-			<string>date of Saturday next week</string>
+			<string>date of Saturday last week</string>
 			<key>modificationDate</key>
-			<date>2017-02-12T21:48:34Z</date>
+			<date>2017-02-12T22:10:53Z</date>
 			<key>plainText</key>
 			<string># AppleScript for TextExpander
 # Eric Eggert
@@ -274,9 +274,9 @@ end getDateOfLastWeekWeekday
 			<key>creationDate</key>
 			<date>2017-01-02T12:29:36Z</date>
 			<key>label</key>
-			<string>date of Sunday next week</string>
+			<string>date of Sunday last week</string>
 			<key>modificationDate</key>
-			<date>2017-02-12T21:48:43Z</date>
+			<date>2017-02-12T22:10:58Z</date>
 			<key>plainText</key>
 			<string># AppleScript for TextExpander
 # Eric Eggert
@@ -358,9 +358,9 @@ end getDateOfLastWeekWeekday
 			<key>creationDate</key>
 			<date>2017-01-02T12:29:36Z</date>
 			<key>label</key>
-			<string>date of Thursday next week</string>
+			<string>date of Thursday last week</string>
 			<key>modificationDate</key>
-			<date>2017-02-12T21:48:51Z</date>
+			<date>2017-02-12T22:11:03Z</date>
 			<key>plainText</key>
 			<string># AppleScript for TextExpander
 # Eric Eggert
@@ -442,9 +442,9 @@ end getDateOfLastWeekWeekday
 			<key>creationDate</key>
 			<date>2017-01-02T12:29:36Z</date>
 			<key>label</key>
-			<string>date of Monday next week</string>
+			<string>date of Tuesday last week</string>
 			<key>modificationDate</key>
-			<date>2017-02-12T21:48:59Z</date>
+			<date>2017-02-12T22:11:28Z</date>
 			<key>plainText</key>
 			<string># AppleScript for TextExpander
 # Eric Eggert
@@ -526,9 +526,9 @@ end getDateOfLastWeekWeekday
 			<key>creationDate</key>
 			<date>2017-01-02T12:29:36Z</date>
 			<key>label</key>
-			<string>date of Wednesday next week</string>
+			<string>date of Wednesday last week</string>
 			<key>modificationDate</key>
-			<date>2017-02-12T21:49:11Z</date>
+			<date>2017-02-12T22:11:18Z</date>
 			<key>plainText</key>
 			<string># AppleScript for TextExpander
 # Eric Eggert
